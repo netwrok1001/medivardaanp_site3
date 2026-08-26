@@ -160,7 +160,7 @@ export default function SecuritySection() {
         </div>
 
         {/* ── Growth chart ── */}
-        <div
+        {/* <div
           className="sec-reveal opacity-100 border border-border p-10 md:p-16"
           style={{ transition: 'opacity 0.6s ease 0.36s, transform 0.6s ease 0.36s' }}
         >
@@ -205,7 +205,7 @@ export default function SecuritySection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

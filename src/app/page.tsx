@@ -5,7 +5,7 @@ import HeroSection from '@/app/components/HeroSection';
 import FeaturesBento from '@/app/components/FeaturesBento';
 import HowItWorks from '@/app/components/HowItWorks';
 import SecuritySection from '@/app/components/SecuritySection';
-import PricingSection from '@/app/components/PricingSection';
+
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <FeaturesBento />
       <HowItWorks />
       <SecuritySection />
-      <PricingSection />
+      
       <Footer />
     </main>
   );
