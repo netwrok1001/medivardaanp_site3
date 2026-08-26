@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #060A0F;
+  --foreground: #F0FDF9;
+  --primary: #0D9488;
+  --primary-foreground: #FFFFFF;
+  --secondary: #0F2027;
+  --secondary-foreground: #A7F3D0;
+  --accent: #22D3A5;
+  --accent-foreground: #022C22;
+  --muted: #0F1F1A;
+  --muted-foreground: #6EE7B7;
+  --card: #0A1628;
+  --card-foreground: #E0FDF4;
+  --border: #1A3A30;
+  --input: #0F2027;
+  --ring: #0D9488;
+  --radius: 1rem;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .grid-tech {
+    background-image: radial-gradient(circle at 1px 1px, rgba(13, 148, 136, 0.12) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  .grid-tech-fine {
+    background-image: radial-gradient(circle at 1px 1px, rgba(34, 211, 165, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .text-hero-xl {
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+  }
+
+  .text-massive-bg {
+    font-size: clamp(5rem, 20vw, 22rem);
+    line-height: 0.75;
+    letter-spacing: -0.06em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .glow-teal {
+    filter: drop-shadow(0 0 30px rgba(13, 148, 136, 0.6)) drop-shadow(0 0 60px rgba(34, 211, 165, 0.3));
+  }
+
+  .glow-accent {
+    filter: drop-shadow(0 0 20px rgba(34, 211, 165, 0.8));
+  }
+
+  .card-glass {
+    background: rgba(10, 22, 40, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+  }
+
+  .card-glass-accent {
+    background: rgba(13, 148, 136, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(34, 211, 165, 0.25);
+  }
+
+  .scan-line-anim {
+    animation: scan-line 8s linear infinite;
+    background: linear-gradient(to bottom, transparent, rgba(13, 148, 136, 0.25), transparent);
+  }
+
+  .pulse-ring {
+    animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .orbit-slow {
+    animation: orbit 12s linear infinite;
+  }
+
+  .orbit-reverse {
+    animation: orbit-reverse 16s linear infinite;
+  }
+
+  .float-gentle {
+    animation: float-gentle 5s ease-in-out infinite;
+  }
+
+  .float-gentle-delay {
+    animation: float-gentle 6s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  .heartbeat-pulse {
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+
+  .particle-drift {
+    animation: particle-drift linear infinite;
+  }
+
+  .data-stream {
+    animation: data-stream 3s ease-in-out infinite;
+  }
+
+  .hologram-flicker {
+    animation: hologram-flicker 4s ease-in-out infinite;
+  }
+
+  .blob-hero {
+    background: radial-gradient(ellipse at center, rgba(13, 148, 136, 0.15) 0%, rgba(34, 211, 165, 0.05) 50%, transparent 70%);
+    filter: blur(60px);
+  }
+
+  .blob-accent {
+    background: radial-gradient(ellipse at center, rgba(34, 211, 165, 0.12) 0%, transparent 70%);
+    filter: blur(80px);
+  }
+
+  .text-gradient-teal {
+    background: linear-gradient(135deg, #22D3A5 0%, #0D9488 50%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-glow {
+    box-shadow: 0 0 20px rgba(13, 148, 136, 0.3), inset 0 0 20px rgba(13, 148, 136, 0.05);
+  }
+
+  .neon-border {
+    border: 1px solid rgba(34, 211, 165, 0.4);
+    box-shadow: 0 0 15px rgba(34, 211, 165, 0.15), inset 0 0 15px rgba(34, 211, 165, 0.05);
+  }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(800px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.7; }
+  100% { transform: scale(0.95); opacity: 1; }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(0deg) translateX(170px) rotate(0deg); }
+  to { transform: rotate(-360deg) translateX(170px) rotate(360deg); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(34, 211, 165, 0.5)); }
+  14% { transform: scale(1.08); filter: drop-shadow(0 0 30px rgba(34, 211, 165, 0.9)); }
+  28% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(34, 211, 165, 0.5)); }
+  42% { transform: scale(1.04); filter: drop-shadow(0 0 22px rgba(34, 211, 165, 0.7)); }
+  70% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(34, 211, 165, 0.5)); }
+}
+
+@keyframes particle-drift {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-200px) translateX(40px) scale(0); opacity: 0; }
+}
+
+@keyframes data-stream {
+  0% { stroke-dashoffset: 200; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes hologram-flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.6; }
+  97% { opacity: 1; }
+  98% { opacity: 0.3; }
+  99% { opacity: 1; }
+}
+
+@keyframes ecg-draw {
+  0% { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counter-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.ecg-line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: ecg-draw 2s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.counter-spin {
+  animation: counter-spin 15s linear infinite;
+}
+
+.blink-cursor {
+  animation: blink-cursor 1s step-end infinite;
+}
+
+.gradient-shift-bg {
+  background: linear-gradient(270deg, #0D9488, #22D3A5, #06B6D4, #0D9488);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
